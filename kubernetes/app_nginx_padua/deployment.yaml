@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: nginx-padua
+
+spec:
+  selector:
+    matchLabels:
+      app: nginx-padua
+  template:
+    metadata:
+      labels:
+        app: nginx-padua
+    spec:
+      containers:
+      - name: nginx-padua
+        image: nginx
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+       
+       
+      #https://kubedev.club.hotmart.com/lesson/2OM63PnY46/node-selector
+      nodeSelector:
+        campus: Padua

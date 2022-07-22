@@ -1,0 +1,17 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: service-nginx-cordeiro
+
+spec:
+  selector:
+    app: nginx-cordeiro
+  ports:
+   - port: 80
+     name: http
+     targetPort: 80
+    
+    
+  type: ClusterIP

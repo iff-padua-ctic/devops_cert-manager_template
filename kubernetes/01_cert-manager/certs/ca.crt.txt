@@ -1,0 +1,9 @@
+Preeenchimento do certificado:
+
+Country Name (2 letter code) [AU]:BR
+State or Province Name (full name) [Some-State]:RIO DE JANEIRO
+Locality Name (eg, city) []:CORDEIRO
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:INSTITUTO FEDERAL FLUMINENSE
+Organizational Unit Name (eg, section) []:CTIC
+Common Name (e.g. server FQDN or YOUR name) []:kubernetes.padua.iff.edu.br
+Email Address []:ctic@iff.edu.brBR

@@ -1,0 +1,25 @@
+# https://community.traefik.io/t/kubernetes-ingressroute-with-tls-secret/2911
+
+apiVersion: traefik.containo.us/v1alpha1
+
+kind: IngressRoute
+
+metadata:
+  name: ingress-nginx-padua
+  
+spec:
+  entryPoints:
+      - websecure
+  routes:
+  - match: Host(`nginx.padua.iff.edu.br`)
+    kind: Rule
+    services:
+    - name: service-nginx-padua
+      port: 80
+  tls:
+    secretName: cer-nginx-padua
+
+
+# $ kubectl get certificate
+# NAME                 READY   SECRET                      AGE
+# nginx-tls-cordeiro   False   secret-nginx-tls-cordeiro   46s    

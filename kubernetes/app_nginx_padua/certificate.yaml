@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+
+metadata: 
+  name: nginx-tls-padua
+
+spec:
+  secretName: cer-nginx-padua
+  issuerRef:
+    name: ca-issuer
+    kind: ClusterIssuer
+  
+  dnsNames:
+    - nginx.padua.iff.edu.br
