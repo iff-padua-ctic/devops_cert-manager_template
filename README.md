@@ -3,10 +3,10 @@
 ## Passos
 
 1. Instalação do Cert-Manager
-    #https://youtu.be/IQ3G8Z1myMw?t=95
-    #https://cert-manager.io/docs/
-    #https://cert-manager.io/docs/installation/helm/#prerequisites
-    #https://youtu.be/IQ3G8Z1myMw?t=211
+    #https://youtu.be/IQ3G8Z1myMw?t=95 <br>
+    #https://cert-manager.io/docs/ <br>
+    #https://cert-manager.io/docs/installation/helm/#prerequisites <br>
+    #https://youtu.be/IQ3G8Z1myMw?t=211 <br>
 	<br>
     $ helm repo add jetstack https://charts.jetstack.io <br>
     $ helm repo update <br>
@@ -20,35 +20,35 @@
 
 
 2. Gerar o certificado
-    #https://youtu.be/IQ3G8Z1myMw?t=240
+    #https://youtu.be/IQ3G8Z1myMw?t=240 <br>
     #gerar certificate authority <br>
-    $ openssl genrsa -out ca.key 4096
+    $ openssl genrsa -out ca.key 4096 <br>
 
-	### NOTA: O Common Name deve ser o dominio desejado( padua.iff.edu.br, cordeiro.iff.edu.br, etc)
+	### NOTA: O Common Name deve ser o dominio desejado( padua.iff.edu.br, cordeiro.iff.edu.br, etc) <br>
 	
     #Gerar o certificado crt  <br>
-    $ openssl req -new -x509 -sha256 -days 3650 -key ca.key -out ca.crt
-    #O certificado crt deve ser importado nas máquinas windows da rede local 
-    #na pasta trust root certificate authority
+    $ openssl req -new -x509 -sha256 -days 3650 -key ca.key -out ca.crt <br>
+    #O certificado crt deve ser importado nas máquinas windows da rede local <br>
+    #na pasta trust root certificate authority <br>
 
 
 3. Cluster Issuer 
     #https://youtu.be/IQ3G8Z1myMw?t=395
-    #https://cert-manager.io/docs/concepts/issuer/#namespaces
-    #https://youtu.be/IQ3G8Z1myMw?t=527
+    #https://cert-manager.io/docs/concepts/issuer/#namespaces <br>
+    #https://youtu.be/IQ3G8Z1myMw?t=527 <br>
     #converter os certificados p/ base64 <br>
     #$ cat ca.crt | base64 -w 0 <br>
     #$ cat ca.key | base64 -w 0 <br>
 
     #https://shocksolution.com/2018/12/14/creating-kubernetes-secrets-using-tls-ssl-as-an-example/
-    #Criar o arquivo sem erros
+    #Criar o arquivo sem erros <br>
     $ kubectl create secret tls temp-tls --key="./certs/ca.key" --cert="./certs/ca.crt" <br>
     $ kubectl get secret temp-tls -o yaml > secret.yaml <br>
     $ kubectl delete secret temp-tls <br>
     $ kubectl get clusterissuer <br>
 
 
-4. Configurações finais
+4. Configurações finais <br>
     #https://youtu.be/IQ3G8Z1myMw?t=574
     
 
