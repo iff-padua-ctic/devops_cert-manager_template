@@ -1,0 +1,1 @@
+# devops_cert-manager_template
