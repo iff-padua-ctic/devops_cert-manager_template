@@ -1,0 +1,21 @@
+
+
+Instalação
+https://kubedev.club.hotmart.com/lesson/64l0vpv94j/instalacao
+
+https://artifacthub.io/
+traefik(traefik Labs)
+
+$ helm repo add traefik https://helm.traefik.io/traefik
+$ helm repo update
+$ helm show values traefik/traefik > values.yaml
+$ kubectl create namespace traefik-system
+
+$ helm upgrade --install traefik traefik/traefik --namespace=traefik-system  (atualiza ou instala)
+$ (usando o values) helm upgrade --install traefik traefik/traefik --namespace=traefik-system  -f .\values.yaml
+
+$ kubectl get all -n traefik-system (teste)
+
+#em caso de erro na instalação
+$ helm list --all --all-namespaces
+$ helm uninstall traefik -n kube-system

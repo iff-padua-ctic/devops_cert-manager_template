@@ -6,6 +6,7 @@ metadata:
   name: nginx-tls-padua
 
 spec:
+  commonName: nginx.padua.iff.edu.br
   secretName: cer-nginx-padua
   issuerRef:
     name: ca-issuer
