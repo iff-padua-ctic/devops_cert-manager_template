@@ -12,7 +12,7 @@ https://artifacthub.io/packages/helm/cert-manager/cert-manager
 	<br>
  
 #https://artifacthub.io/packages/helm/cert-manager/cert-manager	 <br>
- #install CRD resources <br
+ #install CRD resources <br>
  $ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.4/cert-manager.crds.yaml <br> <br>
  
     $ helm repo add jetstack https://charts.jetstack.io <br>
