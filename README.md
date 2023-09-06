@@ -2,20 +2,25 @@
  
 ## Passos
 
+https://artifacthub.io/packages/helm/cert-manager/cert-manager
+
 1. Instalação do Cert-Manager
     #https://youtu.be/IQ3G8Z1myMw?t=95 <br>
     #https://cert-manager.io/docs/ <br>
     #https://cert-manager.io/docs/installation/helm/#prerequisites <br>
     #https://youtu.be/IQ3G8Z1myMw?t=211 <br>
 	<br>
+ 
+#https://artifacthub.io/packages/helm/cert-manager/cert-manager	 <br>
+ #install CRD resources <br
+ $ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.4/cert-manager.crds.yaml <br> <br>
+ 
     $ helm repo add jetstack https://charts.jetstack.io <br>
     $ helm repo update <br>
 
-    #install CRD resources <br>
-    $ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.crds.yaml <br>
-
+   
     #install cert-manager <br>
-    $ helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --version v1.8.2  <br>  
+    $ helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --version v1.12.4  <br>  
     
 
 
